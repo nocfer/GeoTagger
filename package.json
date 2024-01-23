@@ -20,7 +20,6 @@
     "eslint": "^8.56.0",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1"
-
   },
   "bin": {
     "geotagger": "./dist/index.js"
@@ -38,6 +37,7 @@
     "dist"
   ],
   "scripts": {
+    "prepare": "tsc -p tsconfig.json --skipLibCheck",
     "test": "jest --passWithNoTests --runInBand",
     "clean": "rm -rf ./dist",
     "build": "npx tsc -p tsconfig.json --skipLibCheck",

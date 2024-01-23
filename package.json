@@ -38,7 +38,6 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "npx tsc -p tsconfig.json --skipLibCheck",
     "test": "jest --passWithNoTests --runInBand",
     "clean": "rm -rf ./dist",
     "build": "npx tsc -p tsconfig.json --skipLibCheck",

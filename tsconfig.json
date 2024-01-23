@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/", // target for compiled files
+    "allowSyntheticDefaultImports": true, // no errors on commonjs default import
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strictBindCallApply": true,
+    "allowJs": false, // include js files
+    "checkJs": false, // typecheck js files
+    "declaration": false, // don't emit declarations
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true, // importing helper functions from tslib
+    "noEmitHelpers": true, // disable emitting inline helper functions
+    "lib": ["ES2020"], // enabled features up until and including ["version"]
+    "target": "ES2020", // compiler target
+    "module": "CommonJS", // "es2015" for tree-shaking
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist", "deploy", "node_modules"]
+}

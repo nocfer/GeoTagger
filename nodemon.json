@@ -1,0 +1,11 @@
+{
+    "verbose": false,
+    "delay": "500",
+    "ext": "ts json yaml",
+    "exec": "node --require ts-node/register --require dotenv/config ./src/index.ts",
+    "ignore": [
+      "node_modules",
+      "_deploy",
+      "dist"
+    ]
+  }

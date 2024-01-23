@@ -1,0 +1,51 @@
+{
+  "name": "geotagger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Ferdinando Nocera",
+    "email": "nocera.ferdinando@gmail.com",
+    "url": "https://github.com/nocfer"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "fast-xml-parser": "^4.3.3",
+    "moment": "^2.30.1",
+    "nodemon": "^3.0.3",
+    "tslib": "^2.6.2",
+    "xmlbuilder2": "^3.1.1"
+  },
+  "bin": {
+    "geotagger": "./dist/index.js"
+  },
+  "keywords": [
+    "cli",
+    "npmtool",
+    "geotagger",
+    "geotag",
+    "geotag-images",
+    "exiftool",
+    "photos"
+  ],
+  "scripts": {
+    "test": "jest --passWithNoTests --runInBand",
+    "clean": "rm -rf ./dist",
+    "build": "rm -rf ./build && yarn lint && npx tsc -p tsconfig.json --skipLibCheck",
+    "lint": "eslint --ext ts,tsx src/**/*.ts",
+    "precommit": "yarn test && yarn lint && tsc",
+    "validate-commit": "lint-staged",
+    "commit": "npx git-cz",
+    "start:prod": "node ./dist",
+    "start": "nodemon"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "dotenv": "^16.3.2",
+    "eslint": "^8.56.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,5 +1,6 @@
-import { create, convert } from 'xmlbuilder2';
+import path from 'path';
 import { readFileSync, writeFileSync } from 'fs';
+import { create, convert } from 'xmlbuilder2';
 import { GPXFile } from './gpx.types';
 
 const DEFAULT_FILE_PATH = 'out/newGPX.gpx';
@@ -13,7 +14,7 @@ export const loadGPX = (filePath: string) => {
 };
 
 export const buildGPX = (obj: GPXFile, filePath?: string, options?: { writeFile?: boolean }) => {
-  const destinationPath = filePath || DEFAULT_FILE_PATH;
+  const destinationPath = path.join(__dirname, filePath || DEFAULT_FILE_PATH);
 
   const gpx = create(obj);
 

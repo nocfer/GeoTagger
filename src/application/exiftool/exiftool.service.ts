@@ -1,12 +1,19 @@
-import { execSync } from 'child_process';
 import path from 'path';
+import env from '../../config/env';
+import { execSync } from 'child_process';
 import { PhotoMetadata } from './exiftool.types';
+
+const CONFIG_PATH = path.join(__dirname, env.exiftool.configFile);
 
 export const extractCreationDate = (dirPath: string) => {
   const photosPath = path.join(dirPath);
 
-  const supportedExtensions = '-ext jpg -ext jpeg -ext png -ext cr2';
-  const exiftoolCmd = `exiftool -datetimeoriginal ${photosPath} -j ${supportedExtensions}`;
+  const supportedExtensions = env.exiftool.supportedExtensions
+    .split(';')
+    .map((ext) => `-ext ${ext}`)
+    .join(' ');
+
+  const exiftoolCmd = `exiftool -config ${CONFIG_PATH} ${photosPath} -date ${supportedExtensions} -j`;
 
   const exiftoolOutput = execSync(exiftoolCmd);
 

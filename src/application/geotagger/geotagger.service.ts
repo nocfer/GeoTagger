@@ -1,6 +1,6 @@
 import moment from 'moment';
-import { extractCreationDate, geotagPhotos } from '../exiftool';
 import { loadGPX } from '../gpx';
+import { extractCreationDate, geotagPhotos } from '../exiftool';
 import { buildGPX, findClosestGPXLogTime } from '../gpx/gpx.service';
 
 export const geotag = (photosDir: string, gpxFilePath: string) => {

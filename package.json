@@ -1,6 +1,6 @@
 {
   "name": "geotagger",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "main": "index.js",
   "author": {
     "name": "Ferdinando Nocera",
@@ -32,7 +32,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "npx tsc -p tsconfig.json --skipLibCheck",
+    "prepare": "tsc -p tsconfig.json --skipLibCheck",
     "test": "jest --passWithNoTests --runInBand",
     "clean": "rm -rf ./dist",
     "build": "npx tsc -p tsconfig.json --skipLibCheck",

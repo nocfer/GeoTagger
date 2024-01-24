@@ -16,6 +16,16 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build # Adjust this script based on your project setup
+
       - name: publish
         run: npm publish --access public
         env:

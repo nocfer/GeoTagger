@@ -6,7 +6,7 @@ import { buildGPX, findClosestGPXLogTime } from '../gpx/gpx.service';
 export const geotag = (photosDir: string, gpxFilePath: string) => {
   const gpx = loadGPX(gpxFilePath);
 
-  const photosCreationDates = extractCreationDate('assets');
+  const photosCreationDates = extractCreationDate(photosDir);
 
   const mapped = photosCreationDates.map((photo) => {
     const parsedPhotoDate = moment(photo.DateTimeOriginal, 'YYYY:MM:DD HH:mm:ss').toDate();

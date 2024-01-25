@@ -11,6 +11,7 @@
   "dependencies": {
     "commander": "^11.1.0",
     "fast-xml-parser": "^4.3.3",
+    "dotenv": "^16.3.2",
     "joi": "^17.12.0",
     "moment": "^2.30.1",
     "nodemon": "^3.0.3",
@@ -19,7 +20,7 @@
     "xmlbuilder2": "^3.1.1"
   },
   "bin": {
-    "geotagger": "./dist/index.js"
+    "geotagger": "dist/index.js"
   },
   "keywords": [
     "cli",
@@ -31,7 +32,9 @@
     "photos"
   ],
   "files": [
-    "dist"
+    "config",
+    "dist",
+    "default.env"
   ],
   "scripts": {
     "prepare": "tsc -p tsconfig.json --skipLibCheck",
@@ -49,7 +52,6 @@
     "@types/node": "^20.11.5",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
-    "dotenv": "^16.3.2",
     "eslint": "^8.56.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"

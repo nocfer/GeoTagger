@@ -1,4 +1,6 @@
 import Joi from 'joi';
+import dotenv from 'dotenv';
+dotenv.config({ path: 'default.env' });
 
 enum NodeEnvs {
   development = 'development',
@@ -28,7 +30,9 @@ type EnvVars = {
 
 // define validation for all the env variables
 const envSchema = Joi.object({
-  NODE_ENV: Joi.string().valid(Object.values(NodeEnvs)).default('test'),
+  NODE_ENV: Joi.string()
+    .valid(...Object.values(NodeEnvs))
+    .default(NodeEnvs.test),
   LOG_LEVEL: Joi.string(),
   EXIFTOOL_CONFIG_FILE: Joi.string().required(),
   EXIFTOOL_SUPPORTED_EXTENSIONS: Joi.string().required()

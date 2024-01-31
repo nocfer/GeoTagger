@@ -9,7 +9,7 @@ export const geotag = (photosDir: string, gpxFilePath: string) => {
   const photosCreationDates = extractCreationDate(photosDir);
 
   const mapped = photosCreationDates.map((photo) => {
-    const parsedPhotoDate = moment(photo.DateTimeOriginal, 'YYYY:MM:DD HH:mm:ss').toDate();
+    const parsedPhotoDate = moment(photo.Date, 'YYYY:MM:DD HH:mm:ss').toDate();
 
     return findClosestGPXLogTime(gpx, parsedPhotoDate);
   });
